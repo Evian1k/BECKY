@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Becky, With Love</title>
+    <style>
+        body {
+            background: #fce6f0;
+            color: #333;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-image: url('https://www.transparenttextures.com/patterns/diagonal-noise.png');
+            background-repeat: repeat;
+        }
+        h1 {
+            color: #FF5C8D;
+            font-size: 50px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .sparkle {
+            font-size: 35px;
+            color: #FF5C8D;
+            animation: sparkle 1.5s infinite alternate;
+        }
+        .message {
+            font-size: 24px;
+            color: #333;
+            margin-top: 30px;
+            font-style: italic;
+            margin-bottom: 30px;
+            animation: fadeIn 3s ease-in-out;
+        }
+        button {
+            background-color: #FF5C8D;
+            color: white;
+            font-size: 20px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            background-color: #FF328B;
+            transform: scale(1.1);
+        }
+        .heart {
+            font-size: 100px;
+            color: #FF5C8D;
+            cursor: pointer;
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        @keyframes sparkle {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .quote {
+            font-size: 20px;
+            color: #FF5C8D;
+            font-style: italic;
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <h1>For Becky, With Love 💖</h1>
+    <p class="sparkle">✨✨✨</p>
+
+    <div class="quote">
+        "You are my sun, my moon, and all my stars. 🌟"
+    </div>
+
+    <div class="message" id="message">Click below for a sweet surprise! 💌</div>
+    <button onclick="generateMessage()">Send Me Love 💘</button>
+
+    <div class="heart" onclick="heartClick()">❤️</div>
+
+    <script>
+        const messages = [
+            "Hey Becky, you’re the reason even my worst days feel worth it 💖",
+            "Every time I see your name, my heart does a little happy dance 🥰",
+            "You're not just my girlfriend, you're my peace, my home, my everything 🏡❤️",
+            "Just a reminder: you’re the cutest human on the planet. No arguments 😘",
+            "I didn’t believe in perfect people until I met you.",
+            "If I had a flower for every time I thought of you, I’d have a whole garden 🌸",
+            "You're my favorite notification 🥺📱",
+            "With you, every moment feels like magic ✨",
+            "You're the 'Becky' to my 'Evian' – my favorite combo 😚",
+            "If love had a face, it’d look just like you 💘"
+        ];
+
+        function generateMessage() {
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            document.getElementById("message").textContent = randomMessage;
+        }
+
+        function heartClick() {
+            const heart = document.querySelector('.heart');
+            heart.style.transform = 'scale(1.5)';
+            setTimeout(() => {
+                heart.style.transform = 'scale(1)';
+            }, 300);
+            alert('I love you, Becky! 💖');
+        }
+
+        // Optional: Add background music
+        const audio = new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3'); // Replace with your song
+        audio.loop = true;
+        audio.play();
+    </script>
+</body>
+</html>
